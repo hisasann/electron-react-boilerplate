@@ -1,7 +1,7 @@
 {
   "name": "electron-react-boilerplate",
   "productName": "ElectronReact",
-  "version": "0.8.0",
+  "version": "0.0.0",
   "description": "Electron application boilerplate based on React, React Router, Webpack, React Hot Loader for rapid application development",
   "main": "main.js",
   "scripts": {
@@ -23,17 +23,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chentsulin/electron-react-boilerplate.git"
+    "url": "git+https://github.com/hisasann/electron-react-boilerplate.git"
   },
   "author": {
-    "name": "C. T. Lin",
-    "email": "chentsulin@gmail.com",
-    "url": "https://github.com/chentsulin"
+    "name": "hisasann",
+    "email": "hisasann25@gmail.com",
+    "url": "https://github.com/hisasann"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/chentsulin/electron-react-boilerplate/issues"
-  },
   "keywords": [
     "electron",
     "boilerplate",
@@ -43,7 +40,7 @@
     "webpack",
     "react-hot"
   ],
-  "homepage": "https://github.com/chentsulin/electron-react-boilerplate#readme",
+  "homepage": "https://github.com/hisasann/electron-react-boilerplate#readme",
   "devDependencies": {
     "asar": "^0.10.0",
     "babel-core": "^6.6.0",
@@ -91,11 +88,19 @@
     "webpack-target-electron-renderer": "^0.4.0"
   },
   "dependencies": {
+    "autoprefixer": "^6.3.3",
     "css-modules-require-hook": "^3.0.0",
     "electron-debug": "^0.5.2",
     "font-awesome": "^4.4.0",
+    "lodash": "^4.6.1",
+    "normalize.css": "^3.0.3",
     "postcss": "^5.0.18",
+    "postcss-css-variables": "^0.5.1",
+    "postcss-import": "^8.0.2",
+    "postcss-loader": "^0.8.1",
+    "postcss-size": "^1.0.0",
     "react": "^0.14.2",
+    "react-addons-css-transition-group": "^0.14.7",
     "react-dom": "^0.14.2",
     "react-redux": "^4.0.5",
     "react-router": "^2.0.0",

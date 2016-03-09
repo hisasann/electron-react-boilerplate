@@ -8,11 +8,17 @@ class Counter extends Component {
     incrementIfOdd: PropTypes.func.isRequired,
     incrementAsync: PropTypes.func.isRequired,
     decrement: PropTypes.func.isRequired,
-    counter: PropTypes.number.isRequired
+    counter: PropTypes.number.isRequired,
+    loadUser: PropTypes.func.isRequired,
+    request: PropTypes.object.isRequired
   };
 
+  componentDidMount() {
+    this.props.loadUser();
+  }
+
   render() {
-    const { increment, incrementIfOdd, incrementAsync, decrement, counter } = this.props;
+    const { increment, incrementIfOdd, incrementAsync, decrement, counter, loadUser, request } = this.props;
     return (
       <div>
         <div className={styles.backButton}>
@@ -20,6 +26,7 @@ class Counter extends Component {
             <i className="fa fa-arrow-left fa-3x" />
           </Link>
         </div>
+        <p className={styles.loadingLabel}>{request.loadingLabel}</p>
         <div className={`counter ${styles.counter}`}>
           {counter}
         </div>

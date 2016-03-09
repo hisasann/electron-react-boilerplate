@@ -1,3 +1,13 @@
+/* postcss-import */
+/*@import "normalize.css"; /!* == @import "./node_modules/normalize.css/normalize.css"; *!/*/
+
+:root {
+  /* postcss-css-variables */
+  --primary-color:   pink;
+  --secondary-color: darkred;
+  --base-fontsize:     1rem;
+}
+
 .container {
   position: absolute;
   top: 30%;
@@ -12,3 +22,24 @@
 .container a {
   font-size: 1.4rem;
 }
+
+.pink {
+  color: var(--primary-color);
+}
+.darkred {
+  color: var(--secondary-color);
+}
+
+.three {
+}
+
+.toCounter {
+  composes: pink;
+}
+
+.toCamera {
+  composes: darkred;
+}
+
+
+

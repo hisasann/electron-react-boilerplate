@@ -19,15 +19,26 @@ config.module.loaders.push({
   test: /\.global\.css$/,
   loader: ExtractTextPlugin.extract(
     'style-loader',
-    'css-loader'
+    'css-loader',
+    'postcss-loader'
   )
 }, {
   test: /^((?!\.global).)*\.css$/,
   loader: ExtractTextPlugin.extract(
     'style-loader',
-    'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+    'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+    'postcss-loader'
   )
 });
+
+config.postcss = function postcss() {
+  return [
+    require('postcss-size'),
+    require('autoprefixer')({ browsers: ['last 2 versions'] }),
+    require('postcss-css-variables'),
+    require('postcss-import')
+  ];
+};
 
 config.plugins.push(
   new webpack.optimize.OccurenceOrderPlugin(),

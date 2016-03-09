@@ -35,3 +35,23 @@ a:hover {
   text-decoration: none;
   cursor: pointer;
 }
+
+
+.routing-enter {
+  opacity: .01;
+  transform: opacity(1.0);
+  transition: all .25s ease-out;
+}
+.routing-enter-active {
+  opacity: 1;
+  transform: opacity(0);
+}
+.routing-leave {
+  opacity: 1;
+  transform: opacity(0);
+  transition: all .25s ease-out;
+}
+.routing-leave-active {
+  opacity: 0;
+  transform: opacity(0.5);
+}

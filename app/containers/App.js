@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 export default class App extends Component {
   static propTypes = {
@@ -8,7 +9,19 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        {this.props.children}
+        {/* https://github.com/reactjs/react-router/tree/master/examples/animations */}
+        <ReactCSSTransitionGroup
+          component="div"
+          transitionName="routing"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}
+          >
+          {React.cloneElement(this.props.children, {
+            key: this.props.location.pathname
+          })}
+        </ReactCSSTransitionGroup>
+        {/* {this.props.children} */}
+
         {
           (() => {
             if (process.env.NODE_ENV !== 'production') {

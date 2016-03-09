@@ -16,9 +16,11 @@ function setup() {
     increment: spy(),
     incrementIfOdd: spy(),
     incrementAsync: spy(),
-    decrement: spy()
+    decrement: spy(),
+    loadUser: spy()
   };
-  const component = renderIntoDocument(<Counter counter={1} {...actions} />);
+  const request = { isFetching: false, loadingLabel: '..loading' };
+  const component = renderIntoDocument(<Counter counter={1} request={request} {...actions} />);
   return {
     component,
     actions,

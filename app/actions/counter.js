@@ -1,5 +1,11 @@
+import { CALL_API } from '../api/sample-api.js';
+
 export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
 export const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
+
+export const USER_REQUEST = 'USER_REQUEST';
+export const USER_SUCCESS = 'USER_SUCCESS';
+export const USER_FAILURE = 'USER_FAILURE';
 
 export function increment() {
   return {
@@ -30,5 +36,23 @@ export function incrementAsync(delay = 1000) {
     setTimeout(() => {
       dispatch(increment());
     }, delay);
+  };
+}
+
+// ajax
+function fetchUser() {
+  return {
+    [CALL_API]: {
+      types: [USER_REQUEST, USER_SUCCESS, USER_FAILURE]
+    }
+  };
+}
+
+export function loadUser() {
+  console.log('action/counter loadUser');
+
+  // ajax処理を想定
+  return (dispatch) => {
+    return dispatch(fetchUser());
   };
 }
